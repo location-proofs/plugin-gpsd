@@ -33,8 +33,6 @@ export function createStampFromSignals(
       altitudeMeters: reading.altitudeMeters,
       speedMs: reading.speedMs,
       mode: reading.mode,
-      lat: reading.lat,
-      lon: reading.lon,
     },
   };
 }

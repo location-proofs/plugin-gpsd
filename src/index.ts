@@ -75,3 +75,4 @@ export { collectGpsd, readGpsd } from './collect';
 export { createStampFromSignals } from './create';
 export { signStamp } from './sign';
 export { verifyGpsdStamp } from './verify';
+export { canonicalize } from './canonicalize';

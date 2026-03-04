@@ -5,6 +5,7 @@ import type {
   LocationStamp,
   StampSigner,
 } from '@decentralized-geo/astral-sdk/plugins';
+import { canonicalize } from './canonicalize';
 
 /**
  * Sign an unsigned stamp with ECDSA via ethers.
@@ -15,7 +16,7 @@ export async function signStamp(
   wallet: ethers.Wallet | ethers.HDNodeWallet,
   signer?: StampSigner
 ): Promise<LocationStamp> {
-  const data = JSON.stringify(stamp);
+  const data = canonicalize(stamp);
   const now = Math.floor(Date.now() / 1000);
 
   let sigValue: string;

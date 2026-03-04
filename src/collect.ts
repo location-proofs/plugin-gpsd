@@ -2,7 +2,7 @@
 /**
  * GPS daemon collector
  *
- * Reads location from gpsd via `gpspipe -w -n 10`.
+ * Reads location from gpsd via `gpspipe -w -n 40`.
  * Requires gpsd to be running with a GPS device attached.
  * Works on Linux and macOS.
  */
@@ -37,7 +37,7 @@ export async function collectGpsd(timeoutMs = 5000): Promise<RawSignals> {
  */
 export function readGpsd(timeoutMs = 5000): Promise<GpsdReading | null> {
   return new Promise(resolve => {
-    const proc = spawn('gpspipe', ['-w', '-n', '10'], {
+    const proc = spawn('gpspipe', ['-w', '-n', '40'], {
       stdio: ['ignore', 'pipe', 'ignore'],
     });
     const timer = setTimeout(() => {
