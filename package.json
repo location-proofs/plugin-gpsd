@@ -1,0 +1,52 @@
+{
+  "name": "@location-proofs/plugin-gpsd",
+  "version": "0.1.0",
+  "description": "GPS daemon (gpsd) location proof plugin for Astral SDK",
+  "author": "Astral Protocol",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/location-proofs/plugin-gpsd.git"
+  },
+  "homepage": "https://github.com/location-proofs/plugin-gpsd#readme",
+  "bugs": {
+    "url": "https://github.com/location-proofs/plugin-gpsd/issues"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint \"src/**/*.ts\"",
+    "lint-fix": "eslint \"src/**/*.ts\" --fix"
+  },
+  "peerDependencies": {
+    "@decentralized-geo/astral-sdk": ">=0.2.0"
+  },
+  "dependencies": {
+    "ethers": "^6.13.0"
+  },
+  "devDependencies": {
+    "@decentralized-geo/astral-sdk": "file:../astral-sdk",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^20.11.20",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
